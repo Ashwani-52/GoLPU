@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-navy-950 text-white font-body m-0 min-h-screen antialiased;
+    background-image: radial-gradient(circle at 50% -20%, #1a243a 0%, #050810 100%);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-navy-900/60 backdrop-blur-xl border border-white/5 shadow-2xl;
+  }
+  
+  .glass-input {
+    @apply bg-navy-800/50 backdrop-blur-md border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-saffron-500/50 focus:border-saffron-500 transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-saffron-500 to-saffron-600 text-navy-950 font-semibold shadow-[0_0_20px_rgba(255,153,51,0.3)] hover:shadow-[0_0_25px_rgba(255,153,51,0.5)] hover:scale-[1.02] transition-all duration-300;
+  }
+
+  /* Custom Scrollbar for Chat */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-white/10 rounded-full;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-white/20;
+  }
+}
+
+/* MapLibre dark mode overrides */
+.maplibregl-popup-content {
+  @apply !bg-navy-800 !text-white !border !border-white/10 !rounded-xl !shadow-2xl !p-3 font-body;
+}
+.maplibregl-popup-tip {
+  @apply !border-t-navy-800;
+}
+.maplibregl-ctrl-group {
+  @apply !bg-navy-800 !border !border-white/10 !overflow-hidden;
+}
+.maplibregl-ctrl-group button {
+  @apply !w-8 !h-8 filter invert transition-colors hover:!bg-white/10;
+}
